@@ -51,8 +51,35 @@ if (isset($_POST['username']) && isset($_POST['name']) && isset($_POST['lastname
     echo 'ERRORE';
 }
 
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    if (isset($_POST['user_id']) && isset($_POST['username']) && isset($_POST['name']) && isset($_POST['lastname']) && isset($_POST['email'])) {
+        $user = new usermodel();
+        $user->setId($_POST['user_id']);
+        $user->setUsername($_POST['username']);
+        $user->setName($_POST['name']);
+        $user->setLastname($_POST['lastname']);
+        $user->setEmail($_POST['email']);
+
+        $usersDTO = new userDTO($conn);
+        $result = $usersDTO->updateUser($user);
+
+        if ($result) {
+            echo "Dati utente aggiornati con successo.";
+        } else {
+            echo "Si è verificato un errore durante l'aggiornamento dei dati dell'utente.";
+        }
+    } else {
+        echo "Tutti i campi del modulo sono obbligatori.";
+    }
+}
+
+
+
 if (isset($_POST['delete_account'])) {
-    
+
+
     $userId = $_COOKIE['userid'];
 
     $userDTO = new userDTO($conn);
@@ -64,7 +91,7 @@ if (isset($_POST['delete_account'])) {
     } else {
         echo "Errore durante l'eliminazione dell'account.";
     }
-} else if (isset($_POST['delete_user'])){
+} else if (isset($_POST['delete_user'])) {
     $userId = $_POST['user_id'];
 
     $userDTO = new userDTO($conn);

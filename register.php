@@ -58,11 +58,11 @@ if (isset($_SESSION['userLogin']) && isset($_COOKIE["useremail"]) && isset($_COO
                 Register
             </button>
             <div>
-          <p class="text-center m-0">Already registered?</p>
-        </div>
-         <a class="btn btn-primary w-100 py-2" type="button" href="login.php">
-          Login
-        </a>
+                <p class="text-center m-0">Already registered?</p>
+            </div>
+            <a class="btn btn-primary w-100 py-2" type="button" href="login.php">
+                Login
+            </a>
         </form>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

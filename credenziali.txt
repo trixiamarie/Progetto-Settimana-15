@@ -1,0 +1,6 @@
+Credenziali da Admin
+
+email: admin@admin.it
+password: 4dm1n.
+
+Per visualizzare utenti, registrare utenti. 
